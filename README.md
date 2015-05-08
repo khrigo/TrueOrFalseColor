@@ -10,10 +10,10 @@ Play and compare your scores!
 ### Interface
 ![Screenshot](/app/img/screenshot1.png)
 
-### Licensing
-The MIT License (MIT).
-
 ### Used libraries
 * [Random.js](https://github.com/ckknight/random-js)
 * [jQuery JavaScript Library](https://github.com/jquery/jquery)
 * [Bootstrap](https://github.com/twbs/bootstrap)
+
+### Licensing
+[The MIT License (MIT)](https://github.com/khrigo/TrueOrFalseColor/blob/master/LICENSE).
