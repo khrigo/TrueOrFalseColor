@@ -8,7 +8,7 @@ Play and compare your scores!
 **Remember**: stay focused, there's always a trap!
 
 ### Interface
-![Screenshot](/app/img/screenshot.png)
+![Screenshot](/app/img/cover.png)
 
 ### Used libraries
 * [Random.js](https://github.com/ckknight/random-js)
