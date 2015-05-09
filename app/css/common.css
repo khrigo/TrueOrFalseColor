@@ -125,6 +125,7 @@ body {
 .navbar {
   margin-bottom: 10px;
 }
+
 .load {
   z-index: 300;
   position: absolute;

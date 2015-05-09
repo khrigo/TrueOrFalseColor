@@ -35,6 +35,7 @@ function newGame () {
 	time = 0;
 	limit = 22;
 	point = 0;
+	$('.point').html(point);
 	$ppc.removeClass('gt-50');
 	$('.game-over').hide();
 	var randomColorNumber = randomColor.integer(0,4);
@@ -73,7 +74,7 @@ function trueAnswer() {
 
 function endGame() {
 	$('.score').html('Score: ' + point);
-	$('.game-over').show();
+	$('.game-over').show(); // TODO: add score in social share
   	// console.log('end');
 }
 
