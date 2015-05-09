@@ -1,0 +1,140 @@
+body {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.point {
+	position: absolute;
+	right: 0;
+	font-size: 36px;
+	padding: 0 15px;
+  color: #777;
+}
+
+.progress-pie-chart {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #E5E5E5;
+  position: relative;
+  font-family: Arial;
+}
+
+.ppc-progress {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - 150px);
+  top: calc(50% - 150px);
+  width: 300px;
+  height: 300px;
+  clip: rect(0, 300px, 300px, 150px);
+}
+
+.gt-50 .ppc-progress {
+  clip: rect(0, 150px, 300px, 0);
+}
+
+.gt-50 .ppc-progress .ppc-progress-fill {
+  clip: rect(0, 300px, 300px, 150px);
+  background: #E5E5E5;
+}
+
+.ppc-percents {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  left: calc(50% - 260.86957px/2);
+  top: calc(50% - 260.86957px/2);
+  width: 260.86957px;
+  height: 260.86957px;
+  background: #fff;
+  text-align: center;
+  display: table;
+}
+
+.ppc-percents span {
+  display: block;
+  font-size: 2.6em;
+  font-weight: bold;
+  color: #81CE97;
+}
+
+.pcc-percents-wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.progress-pie-chart {
+  margin: 10px auto 0;
+}
+
+.game-over {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 100;
+  padding-top: 40px;
+  text-align: center;
+  background: none repeat scroll 0% 0% rgba(248, 248, 248, 0.95);
+}
+
+.game-over p {
+  font-size: 40px;
+  font-weight: bold;
+  height: 60px;
+  line-height: 60px;
+  margin-top: 29px;
+}
+
+.welcome {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 200;
+  padding-top: 40px;
+  text-align: center;
+  background: none repeat scroll 0% 0% rgba(248, 248, 248, 0.95);
+}
+
+.welcome p {
+  font-size: 27px;
+  font-weight: bold;
+  height: 60px;
+  line-height: 60px;
+  margin-top: 30px;
+}
+
+.lower {
+  min-height: 100%; 
+}
+
+.score {
+  font-size: 34px;
+  margin-top: 0px;
+}
+
+.footer {
+  background: #F8F8F8;
+}
+
+.navbar {
+  margin-bottom: 10px;
+}
+
+.load {
+  z-index: 300;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  padding-top: 150px;
+  font-size: 30px;
+  text-align: center;
+  background: none repeat scroll 0% 0% rgba(248, 248, 248, 1);
+}
