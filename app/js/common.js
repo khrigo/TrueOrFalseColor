@@ -9,10 +9,10 @@ if(randomColorNumber < 3) {var randomColorTextNumber = randomColorText.integer(r
 var time = 0;
 var deg = 0;
 var $ppc = $('.progress-pie-chart');
-var $trueButton = $('.btn-success');
-var $falseButton = $('.btn-danger');
-var $tryButton = $('.btn-warning');
-var $startButton = $('.btn-primary');
+var trueButton = $('.btn-success');
+var falseButton = $('.btn-danger');
+var tryButton = $('.btn-warning');
+var startButton = $('.btn-primary');
 var limit = 20;
 $('.game-over').hide();
 $(document).ready(function(){$('.load').remove();});
@@ -27,8 +27,8 @@ function startGame () {
 	if(randomColorTextNumber == randomColorNumber) {statusPoint = 0;} else {statusPoint = 1;}
 	var timerId = setInterval(function() { $('.ppc-progress-fill').css('transform','rotate('+ time +'deg)'); if (time > 180) { $ppc.addClass('gt-50'); }
 	  if (time == 360) {time = 0;clearInterval(timerId);endGame();}; time = time+3; }, 22);
-	$trueButton.click(function() {if(statusPoint == 0 ) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}});
-	$falseButton.click(function() {if(statusPoint == 1) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}});
+	trueButton.click(function() {if(statusPoint == 0 ) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}});
+	falseButton.click(function() {if(statusPoint == 1) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}});
 }
 
 function newGame () {
@@ -47,8 +47,8 @@ function newGame () {
 	if(randomColorTextNumber == randomColorNumber) {statusPoint = 0;} else {statusPoint = 1;}
 	var timerId = setInterval(function() { $('.ppc-progress-fill').css('transform','rotate('+ time +'deg)'); if (time > 180) { $ppc.addClass('gt-50'); }
 	if (time == 360) {clearInterval(timerId);endGame();$ppc.removeClass('gt-50');}; time = time+3; }, 22);
-	$trueButton.click(function() {if(statusPoint == 0 ) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}});
-	$falseButton.click(function() {if(statusPoint == 1) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}});
+	trueButton.click(function() {if(statusPoint == 0 ) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}});
+	falseButton.click(function() {if(statusPoint == 1) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}});
 }
 
 function trueAnswer() {
@@ -68,8 +68,8 @@ function trueAnswer() {
 	if(randomColorTextNumber == randomColorNumber) {statusPoint = 0;} else {statusPoint = 1;}
 	var timerId = setInterval(function() { $('.ppc-progress-fill').css('transform','rotate('+ time +'deg)'); if (time > 180) { $ppc.addClass('gt-50'); }
 	  if (time == 360) {clearInterval(timerId);endGame();$ppc.removeClass('gt-50');}; time = time+3; }, limit);
-	$trueButton.click(function() {if(statusPoint == 0 ) {clearInterval(timerId);} else {clearInterval(timerId); time = 0;}});
-	$falseButton.click(function() {if(statusPoint == 1) {clearInterval(timerId);} else {clearInterval(timerId); time = 0;}});
+	trueButton.click(function() {if(statusPoint == 0 ) {clearInterval(timerId);} else {clearInterval(timerId); time = 0;}});
+	falseButton.click(function() {if(statusPoint == 1) {clearInterval(timerId);} else {clearInterval(timerId); time = 0;}});
 }
 
 function endGame() {
@@ -79,7 +79,7 @@ function endGame() {
 }
 
 
-$startButton.click(function() {startGame();$trueButton.show();$falseButton.show();$('.point').show();});
-$trueButton.click(function() {if(statusPoint == 0) {trueAnswer(); time = 0; } else {endGame(); $ppc.removeClass('gt-50');}});
-$falseButton.click(function() {if(statusPoint == 1) {trueAnswer(); time = 0;} else {endGame(); $ppc.removeClass('gt-50');}});
-$tryButton.click(function() {newGame();});
+startButton.click(function() {startGame();trueButton.show();falseButton.show();$('.point').show();});
+trueButton.click(function() {if(statusPoint == 0) {trueAnswer(); time = 0; } else {endGame(); $ppc.removeClass('gt-50');}});
+falseButton.click(function() {if(statusPoint == 1) {trueAnswer(); time = 0;} else {endGame(); $ppc.removeClass('gt-50');}});
+tryButton.click(function() {newGame();});
