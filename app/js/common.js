@@ -14,10 +14,11 @@ var $falseButton = $('.btn-danger');
 var $tryButton = $('.btn-warning');
 var $startButton = $('.btn-primary');
 var limit = 20;
+var keyNew = 0;
 $('.game-over').hide();
 $(document).ready(function(){$('.load').remove();});
 
-function startGame () {
+function startGame() {
 	$('.welcome').remove();
 	$('.point').html(point);
 	$('.pcc-percents-wrapper').html('<span class="color">' + arrayColorText[randomColorTextNumber] + '</span>');
@@ -25,13 +26,17 @@ function startGame () {
 	$('.addColor').html('<style>.progress-pie-chart.gt-50{background-color:' + arrayColor[randomColorNumber] + ';}.ppc-progress .ppc-progress-fill{background:' + arrayColor[randomColorNumber] + ';position: absolute;border-radius: 50%;left: calc(50% - 150px);top: calc(50% - 150px);width: 300px;height: 300px;clip: rect(0, 150px, 300px, 0);transform: rotate(0deg);}</style>');
 	
 	if(randomColorTextNumber == randomColorNumber) {statusPoint = 0;} else {statusPoint = 1;}
-	var timerId = setInterval(function() { $('.ppc-progress-fill').css('transform','rotate('+ time +'deg)'); if (time > 180) { $ppc.addClass('gt-50'); }
-	  if (time == 360) {time = 0;clearInterval(timerId);endGame();}; time = time+3; }, 22);
+	var timerId = setInterval(function() { $('.ppc-progress-fill').css('transform','rotate('+ time +'deg)'); if (time > 180) { $ppc.addClass('gt-50'); } if (time == 360) {time = 0;clearInterval(timerId);endGame();}; time = time+3; }, 20);
+	$(document).keydown(function(e) {
+		if(e.which == 37) {if(statusPoint == 0 ) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}}
+		if(e.which == 39) {if(statusPoint == 1 ) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}}	
+	});
 	$trueButton.click(function() {if(statusPoint == 0 ) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}});
 	$falseButton.click(function() {if(statusPoint == 1) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}});
+
 }
 
-function newGame () {
+function newGame() {
 	time = 0;
 	limit = 22;
 	point = 0;
@@ -45,8 +50,11 @@ function newGame () {
 	$('.addColor').html('<style>.progress-pie-chart.gt-50{background-color:' + arrayColor[randomColorNumber] + ';}.ppc-progress .ppc-progress-fill{background:' + arrayColor[randomColorNumber] + ';position: absolute;border-radius: 50%;left: calc(50% - 150px);top: calc(50% - 150px);width: 300px;height: 300px;clip: rect(0, 150px, 300px, 0);transform: rotate(0deg);}</style>');
 	
 	if(randomColorTextNumber == randomColorNumber) {statusPoint = 0;} else {statusPoint = 1;}
-	var timerId = setInterval(function() { $('.ppc-progress-fill').css('transform','rotate('+ time +'deg)'); if (time > 180) { $ppc.addClass('gt-50'); }
-	if (time == 360) {clearInterval(timerId);endGame();$ppc.removeClass('gt-50');}; time = time+3; }, 22);
+	var timerId = setInterval(function() { $('.ppc-progress-fill').css('transform','rotate('+ time +'deg)'); if (time > 180) { $ppc.addClass('gt-50'); } if (time == 360) {clearInterval(timerId);endGame();$ppc.removeClass('gt-50');}; time = time+3; }, 20);
+	$(document).keydown(function(e) {
+		if(e.which == 37) {if(statusPoint == 0 ) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}}
+		if(e.which == 39) {if(statusPoint == 1 ) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}}	
+	});
 	$trueButton.click(function() {if(statusPoint == 0 ) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}});
 	$falseButton.click(function() {if(statusPoint == 1) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}});
 }
@@ -56,7 +64,8 @@ function trueAnswer() {
 	$ppc.removeClass('gt-50');
 	point++;
   	$('.point').html(point);
-  	limit = limit-0.3;
+  	limit = limit*0.99;
+  	console.log(limit);
   	// console.log('point ' + point);
 	randomColorNumber = randomColor.integer(0,4);
 	if(randomColorNumber < 2) {randomColorTextNumber = randomColorText.integer(randomColorNumber,randomColorNumber + 2);} else {randomColorTextNumber = randomColorText.integer(randomColorNumber,randomColorNumber - 2);}
@@ -66,18 +75,23 @@ function trueAnswer() {
 	$('.addColor').html('<style>.progress-pie-chart.gt-50{background-color:' + arrayColor[randomColorNumber] + ';}.ppc-progress .ppc-progress-fill{background:' + arrayColor[randomColorNumber] + ';position: absolute;border-radius: 50%;left: calc(50% - 150px);top: calc(50% - 150px);width: 300px;height: 300px;clip: rect(0, 150px, 300px, 0);transform: rotate(0deg);}</style>');
 	
 	if(randomColorTextNumber == randomColorNumber) {statusPoint = 0;} else {statusPoint = 1;}
-	var timerId = setInterval(function() { $('.ppc-progress-fill').css('transform','rotate('+ time +'deg)'); if (time > 180) { $ppc.addClass('gt-50'); }
-	  if (time == 360) {clearInterval(timerId);endGame();$ppc.removeClass('gt-50');}; time = time+3; }, limit);
+	var timerId = setInterval(function() { $('.ppc-progress-fill').css('transform','rotate('+ time +'deg)'); if (time > 180) { $ppc.addClass('gt-50'); } if (time == 360) {clearInterval(timerId);endGame();$ppc.removeClass('gt-50');}; time = time+3; }, limit);
+	$(document).keydown(function(e) {
+		if(e.which == 37) {if(statusPoint == 0 ) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}}
+		if(e.which == 39) {if(statusPoint == 1 ) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}}	
+	});
 	$trueButton.click(function() {if(statusPoint == 0 ) {clearInterval(timerId);} else {clearInterval(timerId); time = 0;}});
 	$falseButton.click(function() {if(statusPoint == 1) {clearInterval(timerId);} else {clearInterval(timerId); time = 0;}});
 }
 
 function endGame() {
+	keyNew = 1;
 	$('.score').html('Score: ' + point);
 	$('.game-over').show(); // TODO: add score in social share
   	// console.log('end');
 }
 
+$(document).keydown(function(e) {if(e.which == 32) {if(keyNew == 1) {newGame();} if (keyNew == 0) {startGame();}} if(e.which == 37) {if(statusPoint == 0) {trueAnswer(); time = 0; } else {endGame(); $ppc.removeClass('gt-50');}} if(e.which == 39) {if(statusPoint == 1) {trueAnswer(); time = 0; } else {endGame(); $ppc.removeClass('gt-50');}}});
 
 $startButton.click(function() {startGame();$trueButton.show();$falseButton.show();$('.point').show();});
 $trueButton.click(function() {if(statusPoint == 0) {trueAnswer(); time = 0; } else {endGame(); $ppc.removeClass('gt-50');}});
