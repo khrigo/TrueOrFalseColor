@@ -91,7 +91,7 @@ function endGame() {
   	// console.log('end');
 }
 
-$(document).keydown(function(e) {if(e.which == 32) {if(keyNew == 1) {newGame();} if (keyNew == 0) {startGame();}} if(e.which == 37) {if(statusPoint == 0) {trueAnswer(); time = 0; } else {endGame(); $ppc.removeClass('gt-50');}} if(e.which == 39) {if(statusPoint == 1) {trueAnswer(); time = 0; } else {endGame(); $ppc.removeClass('gt-50');}}});
+$(document).keydown(function(e) {if(e.which == 32) {if(keyNew == 1) {newGame();} if (keyNew == 0) {startGame();}} if(!$('.game-over').is(':visible')) {if(e.which == 37) {if(statusPoint == 0) {trueAnswer(); time = 0; } else {endGame(); $ppc.removeClass('gt-50');}} if(e.which == 39) {if(statusPoint == 1) {trueAnswer(); time = 0; } else {endGame(); $ppc.removeClass('gt-50');}}}});
 
 $startButton.click(function() {startGame();$trueButton.show();$falseButton.show();$('.point').show();});
 $trueButton.click(function() {if(statusPoint == 0) {trueAnswer(); time = 0; } else {endGame(); $ppc.removeClass('gt-50');}});
