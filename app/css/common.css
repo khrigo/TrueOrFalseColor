@@ -12,8 +12,8 @@ body {
 }
 
 .progress-pie-chart {
-  width: 300px;
-  height: 300px;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   background-color: #E5E5E5;
   position: relative;
@@ -24,19 +24,19 @@ body {
   content: "";
   position: absolute;
   border-radius: 50%;
-  left: calc(50% - 150px);
-  top: calc(50% - 150px);
-  width: 300px;
-  height: 300px;
-  clip: rect(0, 300px, 300px, 150px);
+  left: calc(50% - 130px);
+  top: calc(50% - 130px);
+  width: 260px;
+  height: 260px;
+  clip: rect(0, 260px, 260px, 130px);
 }
 
 .gt-50 .ppc-progress {
-  clip: rect(0, 150px, 300px, 0);
+  clip: rect(0, 130px, 260px, 0);
 }
 
 .gt-50 .ppc-progress .ppc-progress-fill {
-  clip: rect(0, 300px, 300px, 150px);
+  clip: rect(0, 260px, 260px, 130px);
   background: #E5E5E5;
 }
 
@@ -44,10 +44,10 @@ body {
   content: "";
   position: absolute;
   border-radius: 50%;
-  left: calc(50% - 260.86957px/2);
-  top: calc(50% - 260.86957px/2);
-  width: 260.86957px;
-  height: 260.86957px;
+  left: calc(50% - 227px/2);
+  top: calc(50% - 227px/2);
+  width: 227px;
+  height: 227px;
   background: #fff;
   text-align: center;
   display: table;
