@@ -10,7 +10,7 @@ Play and compare your scores!
 ### Interface
 ![Screenshot](/app/img/cover.png)
 
-You can control the game using your keyboard ← for "true", → for "false" and space for new game.
+You can control the game using your keyboard: ← for "true", → for "false" and space for new game.
 
 ### Used libraries
 * [Random.js](https://github.com/ckknight/random-js)
