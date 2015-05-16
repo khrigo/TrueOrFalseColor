@@ -59,6 +59,7 @@ function newGame() {
 	$falseButton.click(function() {if(statusPoint == 1) {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');} else {clearInterval(timerId);time = 0; $ppc.removeClass('gt-50');}});
 }
 
+
 function trueAnswer() {
 	time = 0; 
 	$ppc.removeClass('gt-50');
