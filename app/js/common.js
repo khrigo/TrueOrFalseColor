@@ -1,20 +1,16 @@
 var arrayColor = ['#E00000', '#FFD801', '#2E9AFE', '#04B431', '#FFA500'];
 var arrayColorText = ['Red', 'Yellow', 'Blue', 'Green', 'Orange'];
 
-var point = 0;
 var randomColor = new Random();
 var randomColorText = new Random();
 var randomColorNumber = randomColor.integer(0,4);
 if(randomColorNumber < 3) {var randomColorTextNumber = randomColorText.integer(randomColorNumber,randomColorNumber + 2);} else {var randomColorTextNumber = randomColorText.integer(randomColorNumber - 2,randomColorNumber);}
-var time = 0;
-var deg = 0;
 var $ppc = $('.progress-pie-chart');
 var $trueButton = $('.btn-success');
 var $falseButton = $('.btn-danger');
 var $tryButton = $('.btn-warning');
 var $startButton = $('.btn-primary');
-var limit = 20;
-var keyNew = 0;
+var limit = 20, keyNew = 0, deg = 0, time = 0, point = 0;
 $('.game-over').hide();
 $(document).ready(function(){$('.load').remove();});
 
