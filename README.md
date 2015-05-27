@@ -7,17 +7,17 @@ Play and compare your scores!
 
 **Remember**: stay focused, there's always a trap!
 
-### Interface
+## Interface
 ![Screenshot](/app/img/cover.png)
 
 You can control the game using your keyboard: ← for "true", → for "false" and space for new game.
 
-### Used libraries
+## Used libraries
 * [Random.js](https://github.com/ckknight/random-js)
 * [jQuery JavaScript Library](https://github.com/jquery/jquery)
 * [Bootstrap](https://github.com/twbs/bootstrap)
 
-### Licensing
+## Licensing
 [The MIT License (MIT)](https://github.com/khrigo/TrueOrFalseColor/blob/master/LICENSE)
 
 Copyright (c) 2015 Igor Khripchenko
