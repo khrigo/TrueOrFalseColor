@@ -14,6 +14,7 @@ var $trueButton = $('.btn-success');
 var $falseButton = $('.btn-danger');
 var $tryButton = $('.btn-warning');
 var $startButton = $('.btn-primary');
+
 var limit = 20, keyNew = 0, deg = 0, time = 0, point = 0;
 $('.game-over').hide();
 $(document).ready(function(){$('.load').remove();});
@@ -44,7 +45,7 @@ function startGame() {
 
 	$(document).keydown(function(e) {
 		if(e.which == 37) {
-			if(statusPoint == 0 ) {
+			if(statusPoint == 0) {
 				clearInterval(timerId);
 				time = 0;
 				$ppc.removeClass('gt-50');
@@ -56,7 +57,7 @@ function startGame() {
 		}
 
 		if(e.which == 39) {
-			if(statusPoint == 1 ) {
+			if(statusPoint == 1) {
 				clearInterval(timerId);
 				time = 0;
 				$ppc.removeClass('gt-50');
@@ -69,7 +70,7 @@ function startGame() {
 	});
 
 	$trueButton.click(function() {
-		if(statusPoint == 0 ) {
+		if(statusPoint == 0) {
 			clearInterval(timerId);
 			time = 0;
 			$ppc.removeClass('gt-50');
