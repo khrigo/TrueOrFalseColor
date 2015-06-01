@@ -188,9 +188,9 @@ function trueAnswer() {
 	time = 0;
 	$ppc.removeClass('gt-50');
 	point++;
-  $('.point').html(point);
-  limit = limit*0.99;
-  // console.log(limit);
+	$('.point').html(point);
+	limit = limit*0.99;
+	// console.log(limit);
 	// console.log('point ' + point);
 	randomColorNumber = randomColor.integer(0,4);
 	if(randomColorNumber < 2) {
@@ -264,7 +264,7 @@ function trueAnswer() {
 			$ppc.removeClass('gt-50');
 		}
 	});
-	
+
 	$falseButton.click(function() {
 		if(statusPoint == 1) {
 			clearInterval(timerId);
