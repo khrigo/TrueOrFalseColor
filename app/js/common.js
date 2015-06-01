@@ -17,7 +17,9 @@ var $startButton = $('.btn-primary');
 
 var limit = 20, keyNew = 0, deg = 0, time = 0, point = 0;
 $('.game-over').hide();
-$(document).ready(function(){$('.load').remove();});
+$(document).ready(function() {
+	$('.load').remove();
+});
 
 function startGame() {
 	$('.welcome').remove();
@@ -41,7 +43,8 @@ function startGame() {
 			time = 0;
 			clearInterval(timerId);
 			endGame();
-		}; time = time+3; }, 20);
+		}; time = time+3;
+	}, 20);
 
 	$(document).keydown(function(e) {
 		if(e.which == 37) {
@@ -126,7 +129,8 @@ function newGame() {
 			clearInterval(timerId);
 			endGame();
 			$ppc.removeClass('gt-50');
-		}; time = time+3; }, 20);
+		}; time = time+3;
+	}, 20);
 
 	$(document).keydown(function(e) {
 		if(e.which == 37) {
@@ -220,7 +224,8 @@ function trueAnswer() {
 			clearInterval(timerId);
 			endGame();
 			$ppc.removeClass('gt-50');
-		}; time = time+3; }, 20);
+		}; time = time+3;
+	}, 20);
 
 	$(document).keydown(function(e) {
 		if(e.which == 37) {
@@ -259,6 +264,7 @@ function trueAnswer() {
 			$ppc.removeClass('gt-50');
 		}
 	});
+	
 	$falseButton.click(function() {
 		if(statusPoint == 1) {
 			clearInterval(timerId);
