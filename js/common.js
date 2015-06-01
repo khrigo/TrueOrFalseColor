@@ -14,9 +14,12 @@ var $trueButton = $('.btn-success');
 var $falseButton = $('.btn-danger');
 var $tryButton = $('.btn-warning');
 var $startButton = $('.btn-primary');
+
 var limit = 20, keyNew = 0, deg = 0, time = 0, point = 0;
 $('.game-over').hide();
-$(document).ready(function(){$('.load').remove();});
+$(document).ready(function() {
+	$('.load').remove();
+});
 
 function startGame() {
 	$('.welcome').remove();
@@ -40,11 +43,12 @@ function startGame() {
 			time = 0;
 			clearInterval(timerId);
 			endGame();
-		}; time = time+3; }, 20);
+		}; time = time+3;
+	}, 20);
 
 	$(document).keydown(function(e) {
 		if(e.which == 37) {
-			if(statusPoint == 0 ) {
+			if(statusPoint == 0) {
 				clearInterval(timerId);
 				time = 0;
 				$ppc.removeClass('gt-50');
@@ -56,7 +60,7 @@ function startGame() {
 		}
 
 		if(e.which == 39) {
-			if(statusPoint == 1 ) {
+			if(statusPoint == 1) {
 				clearInterval(timerId);
 				time = 0;
 				$ppc.removeClass('gt-50');
@@ -69,7 +73,7 @@ function startGame() {
 	});
 
 	$trueButton.click(function() {
-		if(statusPoint == 0 ) {
+		if(statusPoint == 0) {
 			clearInterval(timerId);
 			time = 0;
 			$ppc.removeClass('gt-50');
@@ -125,7 +129,8 @@ function newGame() {
 			clearInterval(timerId);
 			endGame();
 			$ppc.removeClass('gt-50');
-		}; time = time+3; }, 20);
+		}; time = time+3;
+	}, 20);
 
 	$(document).keydown(function(e) {
 		if(e.which == 37) {
@@ -219,7 +224,8 @@ function trueAnswer() {
 			clearInterval(timerId);
 			endGame();
 			$ppc.removeClass('gt-50');
-		}; time = time+3; }, 20);
+		}; time = time+3;
+	}, 20);
 
 	$(document).keydown(function(e) {
 		if(e.which == 37) {
@@ -258,6 +264,7 @@ function trueAnswer() {
 			$ppc.removeClass('gt-50');
 		}
 	});
+	
 	$falseButton.click(function() {
 		if(statusPoint == 1) {
 			clearInterval(timerId);
