@@ -5,7 +5,8 @@ var point = 0;
 var randomColor = new Random();
 var randomColorText = new Random();
 var randomColorNumber = randomColor.integer(0,4);
-if(randomColorNumber < 3) {var randomColorTextNumber = randomColorText.integer(randomColorNumber,randomColorNumber + 2);} else {var randomColorTextNumber = randomColorText.integer(randomColorNumber - 2,randomColorNumber);}
+if(randomColorNumber < 3) {var randomColorTextNumber = randomColorText.integer(randomColorNumber,randomColorNumber + 2);} 
+else {var randomColorTextNumber = randomColorText.integer(randomColorNumber - 2,randomColorNumber);}
 var $ppc = $('.progress-pie-chart');
 var $trueButton = $('.btn-success');
 var $falseButton = $('.btn-danger');
@@ -84,7 +85,7 @@ function trueAnswer() {
 function endGame() {
 	keyNew = 1;
 	$('.score').html('Score: ' + point);
-	$('.game-over').show(); // TODO: add score in social share
+	$('.game-over').show();
   	// console.log('end');
 }
 
