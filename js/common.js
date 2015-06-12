@@ -14,9 +14,9 @@ var $trueButton = $('.btn-success');
 var $falseButton = $('.btn-danger');
 var $tryButton = $('.btn-warning');
 var $startButton = $('.btn-primary');
-
 var limit = 20, keyNew = 0, deg = 0, time = 0, point = 0;
 $('.game-over').hide();
+
 $(document).ready(function() {
 	$('.load').remove();
 });
@@ -183,7 +183,6 @@ function newGame() {
 	});
 }
 
-
 function trueAnswer() {
 	time = 0;
 	$ppc.removeClass('gt-50');
@@ -313,7 +312,7 @@ $(document).keydown(function(e) {
 				}
 			}
 		}
-	});
+});
 
 $startButton.click(function() {
 	startGame();
