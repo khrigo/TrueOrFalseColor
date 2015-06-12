@@ -8,7 +8,7 @@ Play and compare your scores!
 **Remember**: stay focused, there's always a trap!
 
 ## Interface
-![Screenshot](/app/img/cover.png)
+![Screenshot](/app/img/cover.jpg)
 
 You can control the game using your keyboard: ← for "true", → for "false" and space for new game.
 
