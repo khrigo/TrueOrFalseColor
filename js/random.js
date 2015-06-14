@@ -502,6 +502,7 @@
   function convertSliceArgument(value, length) {
     if (value < 0) {
       return Math.max(value + length, 0);
+      // 0
     } else {
       return Math.min(value, length);
     }
