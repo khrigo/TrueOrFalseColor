@@ -20,6 +20,7 @@ You can control the game using your keyboard: ← for "true", → for "false" an
 ## Licensing
 [The MIT License (MIT)](https://github.com/khrigo/TrueOrFalseColor/blob/master/LICENSE)
 
+```
 Copyright (c) 2015 Igor Khripchenko
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -39,3 +40,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
